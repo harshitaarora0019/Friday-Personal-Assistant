@@ -32,11 +32,7 @@ FRIDAY is a lightweight Python voice assistant that responds to voice commands l
     <tr>
       <td><code>musiclibrary.py</code></td>
       <td>Python module with your music playlist (YouTube links)</td>
-    </tr>
-    <tr>
-      <td><code>myassistant.jpg</code></td>
-      <td>Avatar image (glowing ring) shown in the floating assistant UI</td>
-    </tr>
+    </tr> 
     <tr>
       <td><code>requirements.txt</code></td>
       <td>Lists all Python libraries required to run the assistant</td>
