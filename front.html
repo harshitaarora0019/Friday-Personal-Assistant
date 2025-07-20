@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FRIDAY Assistant Orb</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+    }
+
+    .orb-container {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .glow-orb {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 162, 255, 0.3), rgba(0, 68, 255, 0.7));
+      box-shadow:
+        0 0 20px rgba(0, 162, 255, 0.8),
+        0 0 40px rgba(0, 162, 255, 0.6),
+        0 0 60px rgba(0, 162, 255, 0.4);
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow:
+          0 0 20px rgba(0, 162, 255, 0.8),
+          0 0 40px rgba(0, 162, 255, 0.6),
+          0 0 60px rgba(0, 162, 255, 0.4);
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow:
+          0 0 30px rgba(0, 162, 255, 1),
+          0 0 60px rgba(0, 162, 255, 0.8),
+          0 0 90px rgba(0, 162, 255, 0.6);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="orb-container">
+    <div class="glow-orb"></div>
+  </div>
+
+  <script>
+    // Optional: Animate when "Friday" is detected
+    function wakeOrb() {
+      const orb = document.querySelector('.glow-orb');
+      orb.style.animation = 'pulse 1s infinite ease-in-out';
+    }
+
+    function sleepOrb() {
+      const orb = document.querySelector('.glow-orb');
+      orb.style.animation = 'pulse 2s infinite ease-in-out';
+    }
+
+    // Example call (you can trigger from Python backend using WebSocket or Flask call)
+    // wakeOrb();
+    // setTimeout(sleepOrb, 5000);
+  </script>
+
+</body>
+</html>
