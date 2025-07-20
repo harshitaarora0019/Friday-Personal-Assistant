@@ -43,3 +43,13 @@ FRIDAY is a lightweight Python voice assistant that responds to voice commands l
     </tr>
   </tbody>
 </table>
+
+ 🌐 Live Demo
+
+## 🎯 View the Live Assistant UI
+
+Click below to open the FRIDAY glowing orb interface:
+
+👉 [**Open FRIDAY UI Live**](https://harshitaarora0019.github.io/Friday-Personal-Assistant/)
+
+
