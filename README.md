@@ -1,4 +1,4 @@
-fRIDAY is a lightweight Python voice assistant that responds to voice commands like weather updates, news headlines, YouTube playback, and more — all in a glowing orb interface inspired by modern voice AIs.
+FRIDAY is a lightweight Python voice assistant that responds to voice commands like weather updates, news headlines, YouTube playback, and more — all in a glowing orb interface inspired by modern voice AIs.
 
 ## 🔥 Features
 
