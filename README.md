@@ -22,7 +22,7 @@ FRIDAY is a lightweight Python voice assistant that responds to voice commands l
   </thead>
   <tbody>
     <tr>
-      <td><code>assistant.py</code></td>
+      <td><code>main.py</code></td>
       <td>Main Python file containing FRIDAY's voice logic and system control actions</td>
     </tr>
     <tr>
