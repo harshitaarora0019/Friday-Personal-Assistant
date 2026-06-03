@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FRIDAY HUD Ring</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #000 40%, #00111a 100%);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Full screen corner glow */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top left, #00f0ff22 0%, transparent 50%),
+                  radial-gradient(circle at top right, #00f0ff22 0%, transparent 50%),
+                  radial-gradient(circle at bottom left, #00f0ff22 0%, transparent 50%),
+                  radial-gradient(circle at bottom right, #00f0ff22 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .jarvis-wrapper {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      z-index: 1;
+    }
+
+    /* Outer glowing ring rotating + music pulse effect */
+    .jarvis-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 4px solid #00f0ff;
+      box-shadow:
+        0 0 40px #00f0ffaa,
+        0 0 80px #00f0ff44 inset,
+        0 0 60px #00f0ff44; /* soft outer glow */
+      animation: rotate 12s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Dashed rotating inner ring */
+    .jarvis-ring::before {
+      content: "";
+      position: absolute;
+      width: 85%;
+      height: 85%;
+      border-radius: 50%;
+      border: 2px dashed #00f0ff;
+      box-shadow: 0 0 20px #00f0ff88 inset;
+      animation: rotateReverse 16s linear infinite;
+    }
+
+    /* Center FRIDAY text */
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #00f0ff;
+      font-size: 2rem;
+      text-shadow: 0 0 10px #00f0ff, 0 0 30px #00f0ff;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Outer ring base pulse effect every 5s */
+    .pulse-hit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      box-shadow: 0 0 80px #00f0ff44, 0 0 100px #00f0ffaa;
+      transform: translate(-50%, -50%) scale(0);
+      animation: pulse 1.2s ease-out;
+      z-index: 0;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+      }
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateReverse {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="jarvis-wrapper">
+    <div class="jarvis-ring"></div>
+    <div class="center-text">FRIDAY</div>
+    <div id="pulse-container"></div>
+  </div>
+
+  <script>
+    // Pulse every 5 seconds
+    function createPulse() {
+      const container = document.getElementById('pulse-container');
+      const pulse = document.createElement('div');
+      pulse.className = 'pulse-hit';
+      container.appendChild(pulse);
+      setTimeout(() => pulse.remove(), 1200);
+    }
+
+    setTimeout(() => {
+      createPulse();
+      setInterval(createPulse, 5000);
+    }, 5000);
+  </script>
+</body>
+</html>
