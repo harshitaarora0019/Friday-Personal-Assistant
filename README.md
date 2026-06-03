@@ -97,6 +97,9 @@ FRIDAY-Personal-Assistant
 ├── templates
 │   └── index.html
 │
+├── screenshots
+│   └── front.png
+│
 ├── README.md
 └── requirements.txt
 </pre>
@@ -166,6 +169,19 @@ FRIDAY-Personal-Assistant
 <li>Custom playlist commands</li>
 </ul>
 
+<hr>
+
+<h2>📷 Project Screenshot</h2>
+
+<p align="center">
+<img src="screenshots/front.png" width="900">
+</p>
+
+<p align="center">
+Glowing Orb Interface of FRIDAY Personal Voice Assistant
+</p>
+
+<hr>
 <hr>
 
 <h2>🌐 Live Demo</h2>
