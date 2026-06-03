@@ -98,7 +98,7 @@ FRIDAY-Personal-Assistant
 │   └── index.html
 │
 ├── screenshots
-│   └── front.png
+│   └── Front.png
 │
 ├── README.md
 └── requirements.txt
@@ -174,7 +174,7 @@ FRIDAY-Personal-Assistant
 <h2>📷 Project Screenshot</h2>
 
 <p align="center">
-<img src="screenshots/front.png" width="900">
+<img src="screenshots/Front.png" width="900">
 </p>
 
 <p align="center">
